@@ -1,0 +1,10 @@
+{
+    "query": "modern AND design",
+    "fields": "Index, Name, score",
+    "params": {
+        "start": 0,
+        "rows": 20,
+        "df": "Design_Feature",
+        "sort": "score desc"
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "QUERY_1": {
+        "query": "(\"cruise control\") AND (\"lane keep assist\")",
+        "fields": "Index, Name, score",
+        "params": {
+            "defType": "edismax",
+            "start": 0,
+            "rows": 20,
+            "qf": "Safety_Feature^3",
+            "ps": 4,
+            "pf": "Safety_Feature^5",
+            "sort": "score desc"
+        }
+    },
+    "QUERY_2": {
+        "query": "(reasonable price) AND (\"family car\")",
+        "fields": "Name, score, Rating",
+        "params": {
+          "defType": "edismax",
+          "start": 0,
+          "rows": 21,
+          "qf": "Practicality_Feature^7 Price_Feature^7",
+          "pf": "Practicality_Feature^11 Price_Feature^11",
+          "ps": "4",
+          "bq" : "Practicality_Feature:(family)^10",
+          "sort": "score desc"
+        }
+    },
+    "QUERY_3": {
+        "query": "(\"comfortable ride\") AND (smooth ride)",
+        "fields": "Name, score, Rating",
+        "params": {
+            "defType": "edismax",
+            "qf": "Driving_Feature^7 Practicality_Feature^7",
+            "pf": "(Driving_Feature)^9 Practicality_Feature^9",
+            "start": 0,
+            "rows": 20,
+            "ps" : 4,
+            "fq" : "Ownership_Feature_Rating: [7 TO *]",
+            "bq" : "(comfortable)^5 (smooth)^5",
+            "sort": "Rating desc, score desc"
+        }
+    },
+    "QUERY_4": {
+        "query": "(\"modern design\")",
+        "fields": "Index, Name, score",
+        "params": {
+            "defType": "edismax",
+            "start": 0,
+            "rows": 20,
+            "qf": "Design_Feature^3",
+            "ps": 4,
+            "pf": "Design_Feature^5",
+            "bq": "Design_Feature:modern^3",  
+            "sort": "score desc"
+        }
+    },
+    "QUERY_5": {
+        "query": "(sport*) AND (\"high performance\")",
+        "fields": "Name, score, Rating",
+        "params": {
+          "defType": "edismax",
+          "start": 0,
+          "rows": 20,
+          "qf": "Driving_Feature^7 Under_Bonnet_Feature^7",
+          "pf": "Driving_Feature^9 Under_Bonnet_Feature^9",
+          "ps": "4",
+          "bq" : "(sport^10)",
+          "fq": "Rating: [7 TO *]",
+          "sort": "score desc"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "query": "(sport*) AND (\"high performance\")",
+  "fields": "Name, score, Rating",
+  "params": {
+    "defType": "edismax",
+    "start": 0,
+    "rows": 20,
+    "qf": "Driving_Feature^7 Under_Bonnet_Feature^7",
+    "pf": "Driving_Feature^9 Under_Bonnet_Feature^9",
+    "ps": "4",
+    "bq" : "(sport^10)",
+    "fq": "Rating: [7 TO *]",
+    "sort": "score desc"
+  }
+}

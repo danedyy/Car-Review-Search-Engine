@@ -1,0 +1,13 @@
+{
+    "query": "(\"cruise control\") AND (\"lane keep assist\")",
+    "fields": "Index, Name, score",
+    "params": {
+        "defType": "edismax",
+        "start": 0,
+        "rows": 20,
+        "qf": "Safety_Feature^3",
+        "ps": 4,
+        "pf": "Safety_Feature^5",
+        "sort": "score desc"
+    }
+}

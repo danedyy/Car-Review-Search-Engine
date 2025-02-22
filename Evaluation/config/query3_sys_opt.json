@@ -1,0 +1,15 @@
+{
+    "query": "(\"comfortable ride\") AND (smooth ride)",
+    "fields": "Name, score, Rating",
+    "params": {
+        "defType": "edismax",
+        "qf": "Driving_Feature^7 Practicality_Feature^7",
+        "pf": "(Driving_Feature)^9 Practicality_Feature^9",
+        "start": 0,
+        "rows": 20,
+        "ps" : 4,
+        "fq" : "Ownership_Feature_Rating: [7 TO *]",
+        "bq" : "(comfortable)^5 (smooth)^5",
+        "sort": "Rating desc, score desc"
+    }
+}

@@ -1,0 +1,155 @@
+{
+  "add-field-type": [
+    {
+      "name": "review",
+      "class": "solr.TextField",
+      "indexAnalyzer": {
+        "tokenizer": {
+          "class": "solr.StandardTokenizerFactory"
+        },
+        "filters": [
+          {
+            "class": "solr.ASCIIFoldingFilterFactory",
+            "preserveOriginal": true
+          },
+          {
+            "class": "solr.LowerCaseFilterFactory"
+          },
+          {
+            "class": "solr.EnglishMinimalStemFilterFactory"
+          },
+          {
+            "class": "solr.SynonymGraphFilterFactory",
+            "synonyms": "/var/solr/data/cars/conf/solr_synonyms.txt",
+            "ignoreCase": true,
+            "expand": false
+          }
+        ]
+      },
+      "queryAnalyzer": {
+        "tokenizer": {
+          "class": "solr.StandardTokenizerFactory"
+        },
+        "filters": [
+          {
+            "class": "solr.ASCIIFoldingFilterFactory",
+            "preserveOriginal": true
+          },
+          {
+            "class": "solr.LowerCaseFilterFactory"
+          },
+          {
+            "class": "solr.EnglishMinimalStemFilterFactory"
+          },
+          {
+            "class": "solr.SynonymGraphFilterFactory",
+            "synonyms": "/var/solr/data/cars/conf/solr_synonyms.txt",
+            "ignoreCase": true,
+            "expand": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "yearCar",
+      "class": "solr.IntPointField"
+    },
+    {
+      "name": "ratingIndividual",
+      "class": "solr.FloatPointField"
+    }
+  ],
+  "add-field": [
+    {
+      "name": "Price_Feature",
+      "type": "review",
+      "indexed": true
+    },
+    {
+      "name": "Design_Feature",
+      "type": "review",
+      "indexed": true
+    },
+    {
+      "name": "Practicality_Feature",
+      "type": "review",
+      "indexed": true
+    },
+    {
+      "name": "Under_Bonnet_Feature",
+      "type": "review",
+      "indexed": true
+    },
+    {
+      "name": "Efficiency_Feature",
+      "type": "review",
+      "indexed": true
+    },
+    {
+      "name": "Driving_Feature",
+      "type": "review",
+      "indexed": true
+    },
+    {
+      "name": "Safety_Feature",
+      "type": "review",
+      "indexed": true
+    },
+    {
+      "name": "Ownership_Feature",
+      "type": "review",
+      "indexed": true
+    },
+    {
+      "name": "Name",
+      "type": "review",
+      "indexed": true
+    },
+    {
+      "name": "Price_Feature_Rating",
+      "type": "ratingIndividual",
+      "indexed": false
+    },
+    {
+      "name": "Design_Feature_Rating",
+      "type": "ratingIndividual",
+      "indexed": false
+    },
+    {
+      "name": "Practicality_Feature_Rating",
+      "type": "ratingIndividual",
+      "indexed": false
+    },
+    {
+      "name": "Under_Bonnet_Feature_Rating",
+      "type": "ratingIndividual",
+      "indexed": false
+    },
+    {
+      "name": "Efficiency_Feature_Rating",
+      "type": "ratingIndividual",
+      "indexed": false
+    },
+    {
+      "name": "Driving_Feature_Rating",
+      "type": "ratingIndividual",
+      "indexed": false
+    },
+    {
+      "name": "Safety_Feature_Rating",
+      "type": "ratingIndividual",
+      "indexed": false
+    },
+    {
+      "name": "Ownership_Feature_Rating",
+      "type": "ratingIndividual",
+      "indexed": false
+    },
+    {
+      "name": "year",
+      "type": "yearCar",
+      "indexed": true,
+      "multiValued": false
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    command: uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build:
+      context: ./frontend/car-search-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/car-search-app:/app
+      - /app/node_modules
+    command: npm run dev
+

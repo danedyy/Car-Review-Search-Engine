@@ -1,0 +1,10 @@
+{
+    "query": "(cruise control) AND (lane keep assist)",
+    "fields": "Index, Name, score",
+    "params": {
+        "start": 0,
+        "rows": 20,
+        "df": "Safety_Feature",
+        "sort": "score desc"
+    }
+}

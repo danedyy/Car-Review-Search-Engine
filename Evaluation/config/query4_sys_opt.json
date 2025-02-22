@@ -1,0 +1,14 @@
+{
+    "query": "(\"modern design\")",
+    "fields": "Index, Name, score",
+    "params": {
+        "defType": "edismax",
+        "start": 0,
+        "rows": 20,
+        "qf": "Design_Feature^3",
+        "ps": 4,
+        "pf": "Design_Feature^5",
+        "bq": "Design_Feature:modern^3",  
+        "sort": "score desc"
+    }
+}

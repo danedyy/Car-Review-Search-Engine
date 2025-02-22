@@ -1,0 +1,11 @@
+{
+    "query": "(reasonable AND price) AND (family car)",
+    "fields": "Name, score, Rating",
+    "params": {
+      "defType": "edismax",
+      "start": 0,
+      "rows": 20,
+      "qf": "Practicality_Feature Price_Feature",
+      "sort": "score desc"
+    }
+  }
