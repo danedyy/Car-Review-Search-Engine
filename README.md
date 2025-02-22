@@ -71,4 +71,4 @@ This project is a comprehensive car review search engine that leverages web scra
     - Solr will be available at `http://localhost:8983`.
 
 ### Video Demonstration
-- A video demonstration of the project can be ![found here](video/Screen-Recording.mov)
+https://github.com/user-attachments/assets/dccf3f1e-13f3-43af-b331-9337d8924509
